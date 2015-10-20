@@ -29,7 +29,7 @@ public static class Managers
         {
             Application.Quit();
         }
-
+        
         //Si están los managers funcionando entonces obtenemos el manager que pedimos.
         return managersObject.GetComponent<T>();
     }

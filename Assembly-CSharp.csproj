@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\GameScripts\Managers\prebuildObjects.cs" />
      <Compile Include="Assets\Scripts\GameScripts\Managers\sceneMgr.cs" />
      <Compile Include="Assets\Scripts\GameScripts\Managers\spawnerMgr.cs" />
+     <Compile Include="Assets\Scripts\GameScripts\Managers\timeManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

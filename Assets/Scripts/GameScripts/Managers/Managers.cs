@@ -4,7 +4,7 @@ using System.Collections;
 /// <summary>
 /// gestor de Managers. A través de esta clase estática podremos acceder a cualquiera de los managers desde cualquier parte del codigo facilmente
 /// Por ejemplo, llamando desde un componente X para obtener el gameMgr: Managers.gameMgr.
-/// Para esto, debe existir desde la primera escena el gameObject prefabs, el cual con la llamada DontDestroyOnLoad hará que este objeto nunca sea
+/// Para esto, debe existir desde la primera escena el gameObject Managers, el cual con la llamada DontDestroyOnLoad hará que este objeto nunca sea
 /// destruido, y poder así seguir con los managers intactos a medida que avanzamos en los niveles. Esta llamada se realiza en el GameMgr, tiene que
 /// hacerse en un componente, y he decidido que sea en este. 
 /// </summary>

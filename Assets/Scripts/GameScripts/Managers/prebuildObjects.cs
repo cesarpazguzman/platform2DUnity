@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Esta clase sirve para definir qué objetos se instanciarán y cuántos de cada tipo. Hacemos esto al principio para intentar optimizar un poco más
 /// y no hacer creaciones de objetos nuevos durante el juego. Este componente se colocará en cada objeto que represente una escena nueva, para 
-/// simplemente cargar los objetos que necesitemos en esa escena. 
+/// simplemente cargar los objetos que necesitemos en esa escena. Es decir, en los prefabs que representan los niveles.
 /// </summary>
 public class prebuildObjects : MonoBehaviour {
 
@@ -17,8 +17,7 @@ public class prebuildObjects : MonoBehaviour {
     }
     public List<initialObjects> cacheInitialObjects;
 
-	//Se hace en el OnEnable para que objetos de escenas desactivadas no estean ocupando memoria.
-    void OnEnable() 
+    void OnStart() 
     {
         Managers.spawnerMgr.instanciateInitialObjects(this);
 	}

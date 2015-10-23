@@ -9,14 +9,31 @@ using System.Collections;
 /// </summary>
 public class inputMgr : MonoBehaviour {
 
-    
+    bool paused;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
+        paused = false;
 	}
 	 
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+    {
+        //Si estamos en la escena de juego y pulsamos la tecla de pause
+        if (Application.loadedLevelName == "game" && Input.GetButtonDown("Pause"))
+        {
+            pauseGame();           
+        }
 	}
+
+    private void pauseGame()
+    {
+        paused = !paused;
+        Time.timeScale = (paused) ? 0 : 1;
+
+        //Que aparezca el menú de pausa.
+
+
+    }
 }

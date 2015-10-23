@@ -15,22 +15,32 @@ public static class Managers
     private static spawnerMgr m_spawnerMgr = getManager<spawnerMgr>();
     private static sceneMgr m_sceneMgr = getManager<sceneMgr>();
     private static eventMgr m_eventMgr = getManager<eventMgr>();
+    private static inputMgr m_inputMgr = getManager<inputMgr>();
 
     //Propiedades de sólo lectura hacia afuera, de forma que nadie podrá modificar la referencia a los managers, salvo esta clase. 
     public static gameMgr gameMgr { get { return m_gameMgr; } }
     public static spawnerMgr spawnerMgr { get { return m_spawnerMgr; } }
     public static sceneMgr sceneMgr { get { return m_sceneMgr; } }
     public static eventMgr eventMgr { get { return m_eventMgr; } }
+    public static inputMgr inputMgr { get { return m_inputMgr; } }
 
-    private static T getManager<T>() where T : Component
+    private static T getManager<T>() where T : MonoBehaviour
     {    
         //Si no existe el gameObject Managers, entonces quiere decir que no están los managers funcionando y salimos del juego. 
         if (!managersObject)
         {
-            Application.Quit();
+            Debug.LogError("Objeto Managers no encontrado");
         }
         
         //Si están los managers funcionando entonces obtenemos el manager que pedimos.
-        return managersObject.GetComponent<T>();
+        T component = managersObject.GetComponent<T>();
+
+        //Comprobación de error. 
+        if (!component)
+        {
+            Debug.LogError("Componente " + typeof(T) + " no encontrado");
+        }
+
+        return component;
     }
 }

@@ -54,33 +54,38 @@ public class spawnerMgr : MonoBehaviour {
             //Le damos un nombre unico
             newObject.name = prefab.name + "_" + m_nextID++;
             //Y lo metemos como hijo del gameObject que representa la escena
-            //NOTA: ESTO ES ALGO QUE POSTERIORMENTE CAMBIARÉ, dado que el objeto Managers no estará debajo del gameObject que representa la escena
-            //ya que representa a todas juntas.
-            newObject.transform.parent = gameObject.transform.parent;
+            newObject.transform.parent = Managers.sceneMgr.getRootScene().transform;
         }
 
         return newObject;
     }
 
     //Función que simplemente manda al pool de objetos desactivados este objeto
-    public void destroyGameObject(GameObject prefab)
+    public void destroyGameObject(GameObject prefab, bool destroy)
     {
-        //Lo primero que tenemos que hacer es obtener el nombre del prefab original
-        string originalPrefabName = prefab.name.Split('_')[0];
-
-        //Desactivo el objeto de la escena
-        prefab.SetActive(false);
-
-        //Miramos si existe un registro de este objeto en el pool
-        if (!m_poolDeactivatedObjects.ContainsKey(originalPrefabName))
+        if (!destroy)
         {
-            List<GameObject> newList = new List<GameObject>();
-            newList.Add(prefab);
-            m_poolDeactivatedObjects.Add(originalPrefabName, newList);
+            //Lo primero que tenemos que hacer es obtener el nombre del prefab original
+            string originalPrefabName = prefab.name.Split('_')[0];
+
+            //Desactivo el objeto de la escena
+            prefab.SetActive(false);
+
+            //Miramos si existe un registro de este objeto en el pool
+            if (!m_poolDeactivatedObjects.ContainsKey(originalPrefabName))
+            {
+                List<GameObject> newList = new List<GameObject>();
+                newList.Add(prefab);
+                m_poolDeactivatedObjects.Add(originalPrefabName, newList);
+            }
+            else
+            {
+                m_poolDeactivatedObjects[originalPrefabName].Add(prefab);
+            }
         }
         else
         {
-            m_poolDeactivatedObjects[originalPrefabName].Add(prefab);
+            DestroyObject(prefab);
         }
     }
 
@@ -121,9 +126,7 @@ public class spawnerMgr : MonoBehaviour {
                 //Lo metemos en la lista de este tipo de objetos, para despues meterlos en el pool
                 listObjects.Add(go);
                 //Ponemos como padre de este objeto al gameObject que representa la escena. 
-                //NOTA: ESTO ES ALGO QUE POSTERIORMENTE CAMBIARÉ, dado que el objeto Managers no estará debajo del gameObject que representa la escena
-                //ya que representa a todas juntas.
-                go.transform.parent = gameObject.transform.parent;
+                go.transform.parent = Managers.sceneMgr.getRootScene().transform;
             }
 
             //Metemos en el diccionario de objetos desactivados la nueva lista de objetos del mismo tipo, identificado por su clave, el nombre del prefab. 

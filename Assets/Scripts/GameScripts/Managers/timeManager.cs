@@ -7,9 +7,17 @@ using System.Collections;
 /// </summary>
 public class timeManager : MonoBehaviour 
 {
-    public int seconds;
+    [SerializeField]
+    private int seconds;
+
     //Variable que indica a partir de cuantos segundos que queden, se establece como alarma para empezar a indicarle al usuario que le queda poco tiempo
-    public int lastSecondsAlarm = 10;
+    [SerializeField]
+    private int lastSecondsAlarm = 10;
+
+    public int getSeconds
+    {
+        get { return seconds; }
+    }
 
 	// Use this for initialization
 	void Start () 
@@ -42,7 +50,7 @@ public class timeManager : MonoBehaviour
         }
 
         //Si se acaba el tiempo, ejecutaríamos la funcionalidad de que se acaba el tiempo antes de que el jugador consiga el objetivo. 
-        //Managers.gameMgr.restartGame();
+        //Managers.gameMgr.endTime();
     }
 
     //Funcion que se llamará cuando cojamos por ejemplo un elemento de Aumento de tiempo. 

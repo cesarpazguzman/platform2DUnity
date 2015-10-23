@@ -32,6 +32,8 @@ public class sceneMgr : MonoBehaviour {
     {
         //Marcamos como primer nivel, el indicado primero en el Inspector
         m_currentLevel = 0;
+
+        Managers.spawnerMgr.createGameObject(m_levelsInGame[m_currentLevel], Vector3.zero, Quaternion.identity);
 	}
 
     void OnEnable()
@@ -74,6 +76,11 @@ public class sceneMgr : MonoBehaviour {
 
         //La posicion del player se cambiara a una variable global posteriormente.
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(3, 3, 0);
+    }
+
+    public GameObject getLevelGameObject()
+    {
+        return m_levelsInGame[m_currentLevel];
     }
 
     //Funcion llamada cuando se reinicia el juego.

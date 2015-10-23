@@ -15,7 +15,6 @@ public static class Managers
     private static spawnerMgr m_spawnerMgr = getManager<spawnerMgr>();
     private static sceneMgr m_sceneMgr = getManager<sceneMgr>();
     private static eventMgr m_eventMgr = getManager<eventMgr>();
-    private static timeManager m_timeMgr = getManager<timeManager>();
     private static inputMgr m_inputMgr = getManager<inputMgr>();
 
     //Propiedades de sólo lectura hacia afuera, de forma que nadie podrá modificar la referencia a los managers, salvo esta clase. 
@@ -23,7 +22,6 @@ public static class Managers
     public static spawnerMgr spawnerMgr { get { return m_spawnerMgr; } }
     public static sceneMgr sceneMgr { get { return m_sceneMgr; } }
     public static eventMgr eventMgr { get { return m_eventMgr; } }
-    public static timeManager timeMgr { get { return m_timeMgr; } }
     public static inputMgr inputMgr { get { return m_inputMgr; } }
 
     private static T getManager<T>() where T : MonoBehaviour

@@ -54,7 +54,7 @@ public class gameMgr : MonoBehaviour {
         Time.timeScale = 0;
 
         //Sumamos a la puntuación obtenida en el nivel, el tiempo restante 
-        m_score += Managers.timeMgr.getSeconds;
+        m_score += Managers.sceneMgr.getLevelGameObject().GetComponent<timeManager>().getSeconds;
 
         //Si no era el ultimo nivel
         if (Managers.sceneMgr.getCurrentLevel < Managers.sceneMgr.lastLevel())

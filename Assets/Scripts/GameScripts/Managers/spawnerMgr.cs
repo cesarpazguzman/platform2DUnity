@@ -54,7 +54,7 @@ public class spawnerMgr : MonoBehaviour {
             //Le damos un nombre unico
             newObject.name = prefab.name + "_" + m_nextID++;
             //Y lo metemos como hijo del gameObject que representa la escena
-            newObject.transform.parent = Managers.sceneMgr.getRootScene().transform.parent;
+            newObject.transform.parent = Managers.sceneMgr.getRootScene().transform;
         }
 
         return newObject;
@@ -126,7 +126,7 @@ public class spawnerMgr : MonoBehaviour {
                 //Lo metemos en la lista de este tipo de objetos, para despues meterlos en el pool
                 listObjects.Add(go);
                 //Ponemos como padre de este objeto al gameObject que representa la escena. 
-                go.transform.parent = Managers.sceneMgr.getRootScene().transform.parent;
+                go.transform.parent = Managers.sceneMgr.getRootScene().transform;
             }
 
             //Metemos en el diccionario de objetos desactivados la nueva lista de objetos del mismo tipo, identificado por su clave, el nombre del prefab. 

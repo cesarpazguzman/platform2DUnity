@@ -47,6 +47,7 @@ public class gameMgr : MonoBehaviour {
     //Funcion que se llama cuando finaliza el tiempo antes de que el player llegue a su objetivo
     public void gameOver()
     {
+        Debug.Log("GAME OVER");
         //Paramos el juego
         Time.timeScale = 0;
 
@@ -58,6 +59,8 @@ public class gameMgr : MonoBehaviour {
     //Funcion que se llama cuando terminamos un nivel. Aquí pausaremos el juego, y aparecerá un menú con la puntuación obtenida. 
     public void finishLevel()
     {
+        Debug.Log("NIVEL SUPERADO");
+
         //Paramos el juego
         Time.timeScale = 0;
 

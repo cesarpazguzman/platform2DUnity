@@ -45,7 +45,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GameScripts\Logic\cameraController.cs" />
+     <Compile Include="Assets\Scripts\GameScripts\Logic\eatFlower.cs" />
      <Compile Include="Assets\Scripts\GameScripts\Logic\playerController.cs" />
+     <Compile Include="Assets\Scripts\GameScripts\Logic\takeClock.cs" />
+     <Compile Include="Assets\Scripts\GameScripts\Logic\travesablePlatform.cs" />
      <Compile Include="Assets\Scripts\GameScripts\Managers\Managers.cs" />
      <Compile Include="Assets\Scripts\GameScripts\Managers\eventMgr.cs" />
      <Compile Include="Assets\Scripts\GameScripts\Managers\gameMgr.cs" />

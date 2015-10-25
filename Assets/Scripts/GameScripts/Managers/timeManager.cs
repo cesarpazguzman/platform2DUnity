@@ -50,13 +50,13 @@ public class timeManager : MonoBehaviour
         }
 
         //Si se acaba el tiempo, ejecutaríamos la funcionalidad de que se acaba el tiempo antes de que el jugador consiga el objetivo. 
-        //Managers.gameMgr.endTime();
+        Managers.gameMgr.gameOver();
     }
 
     //Funcion que se llamará cuando cojamos por ejemplo un elemento de Aumento de tiempo. 
     public void addTime(int timeToAdd)
     {
-        seconds += timeToAdd; 
+        seconds += timeToAdd;
     }
 
     //Funcion que se llama desde la corutina, que sirve para mostrar el tiempo en la interfaz. 

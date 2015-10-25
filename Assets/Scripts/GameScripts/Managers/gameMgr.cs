@@ -6,6 +6,14 @@ public class gameMgr : MonoBehaviour {
     //Variable que representa la puntuación del juego
     private int m_score = 0;
 
+    //Referencia al player
+    [SerializeField]
+    private GameObject player;
+    public GameObject getPlayer
+    {
+        get { return player; }
+    }
+
     //Evento al que subscribiremos las acciones a inicializar para volver a empezar una partida.
     public delegate void Restart();
     public static event Restart restartGame;

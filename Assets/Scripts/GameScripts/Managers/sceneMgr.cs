@@ -14,6 +14,7 @@ public class sceneMgr : MonoBehaviour {
     private List<GameObject> m_levelsInGame;
 
     private int m_currentLevel;
+    private GameObject m_currentLevelGameObject;
 
     //Propiedad que me indica el actual nivel en el que estoy
     public int getCurrentLevel
@@ -33,7 +34,7 @@ public class sceneMgr : MonoBehaviour {
         //Marcamos como primer nivel, el indicado primero en el Inspector
         m_currentLevel = 0;
 
-        Managers.spawnerMgr.createGameObject(m_levelsInGame[m_currentLevel], Vector3.zero, Quaternion.identity);
+        m_currentLevelGameObject = Managers.spawnerMgr.createGameObject(m_levelsInGame[m_currentLevel], Vector3.zero, Quaternion.identity);
 	}
 
     void OnEnable()
@@ -80,7 +81,7 @@ public class sceneMgr : MonoBehaviour {
 
     public GameObject getLevelGameObject()
     {
-        return m_levelsInGame[m_currentLevel];
+        return m_currentLevelGameObject;
     }
 
     //Funcion llamada cuando se reinicia el juego.

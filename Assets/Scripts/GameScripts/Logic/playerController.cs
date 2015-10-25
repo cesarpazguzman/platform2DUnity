@@ -29,7 +29,7 @@ public class playerController : MonoBehaviour {
 	void Start () 
     {
 
-        m_lookAtRight = false;
+        m_lookAtRight = true;
         m_isJumping = false;
         m_completeJump = false;
         m_isGround = false;

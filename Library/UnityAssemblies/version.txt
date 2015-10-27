@@ -1,0 +1,23 @@
+5.2.1f1:2.1.0.0
+StandaloneWindows
+D:/Archivoteca/Unity5/Editor/Data/Managed/UnityEngine.dll
+D:/Archivoteca/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+D:/Archivoteca/Unity5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+D:/Archivoteca/Unity5/Editor/Data/Managed/UnityEditor.dll
+D:/Archivoteca/Unity5/Editor/Data\Managed/Mono.Cecil.dll
+D:/Archivoteca/Unity5/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll
+D:/Archivoteca/Unity5/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll
+D:/Archivoteca/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll
+D:/Archivoteca/Unity5/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll
+D:/Archivoteca/Unity5/Editor/Data/Managed/UnityEditor.Graphs.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\androidplayer/UnityEditor.Android.Extensions.dll
+D:/Archivoteca/Unity5/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\wp8support/UnityEditor.WP8.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\metrosupport/UnityEditor.Metro.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\TizenPlayer/UnityEditor.Tizen.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\stvplayer/UnityEditor.SamsungTV.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\webglsupport/UnityEditor.WebGL.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\linuxstandalonesupport/UnityEditor.LinuxStandalone.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+D:\Archivoteca\Unity5\Editor\Data\PlaybackEngines\macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll
+C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\2015\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll

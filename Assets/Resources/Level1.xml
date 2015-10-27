@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Time TimeLevel="70" AlarmTime="10" />
+  <Prefabs>
+    <Item prefab="Floor" x="-0.08" y="-4.837377" rotZ="0" scaleX="4.221674" scaleY="0.1447424" />
+    <Item prefab="WallLeft" x="-4.74" y="0.1726233" rotZ="0" scaleX="0.1583178" scaleY="3.782979" />
+    <Item prefab="WallRight" x="4.73" y="0.1426233" rotZ="0" scaleX="0.1583178" scaleY="3.782979" />
+    <Item prefab="normalPlatform" x="-1.97" y="-0.3" rotZ="0" scaleX="1" scaleY="0.2250007" />
+    <Item prefab="BackGroundLevel1" x="-0.01" y="3.14" rotZ="0" scaleX="4.338084" scaleY="6.51248" />
+    <Item prefab="Clock" x="1.51" y="1.859" rotZ="0" scaleX="0.2178207" scaleY="0.2178209" />
+    <Item prefab="Flower" x="-4.282" y="7.78" rotZ="0" scaleX="0.2079018" scaleY="0.207902" />
+    <Item prefab="breakPoint" x="0.02" y="7.43" rotZ="0" scaleX="4.480984" scaleY="0.2250007" />
+    <Item prefab="normalPlatform" x="-1.97" y="-3.5" rotZ="0" scaleX="1" scaleY="0.2250007" />
+    <Item prefab="normalPlatform" x="1.32" y="1.31" rotZ="0" scaleX="1" scaleY="0.2250007" />
+    <Item prefab="traversablePlatform" x="-2.94" y="1.64" rotZ="0" scaleX="1" scaleY="0.2250007" />
+    <Item prefab="movablePlatform4W" x="1.14" y="-2.26" rotZ="0" scaleX="1" scaleY="0.22" />
+    <Item prefab="movablePlatformHor" x="0.24" y="3.47" rotZ="0" scaleX="1" scaleY="0.22" />
+    <Item prefab="movablePlatformVer" x="-2.17" y="4.72" rotZ="0" scaleX="1" scaleY="0.22" />
+  </Prefabs>
+</Level>

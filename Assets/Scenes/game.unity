@@ -289,10 +289,6 @@ MonoBehaviour:
     size: 1
   - prefab: {fileID: 186178, guid: 669dfc9ed27b9fc48963f3ef3d9ce203, type: 2}
     size: 3
-  - prefab: {fileID: 195270, guid: 7ad2b8df26762e84bbacfd17b7e6d530, type: 2}
-    size: 3
-  - prefab: {fileID: 119908, guid: c620f2cf7c26cb04e8b85b0fd413e32e, type: 2}
-    size: 3
 --- !u!1 &1876122272 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 131086, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}

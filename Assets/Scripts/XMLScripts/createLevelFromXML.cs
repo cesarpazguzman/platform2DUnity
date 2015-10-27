@@ -14,7 +14,7 @@ public class createLevelFromXML
     public GameObject generateLevel(string nameLevel)
     {
         //Extraemos el XML y lo deserializamos
-        TextAsset xmlTextAsset = (TextAsset)Resources.Load(nameLevel, typeof(TextAsset));
+        TextAsset xmlTextAsset = (TextAsset)Resources.Load("LevelsXML/"+nameLevel, typeof(TextAsset));
         StringReader stream = new StringReader(xmlTextAsset.text);
         XmlSerializer s = new XmlSerializer(typeof(structureXML));
         m_structureXML = s.Deserialize(stream) as structureXML;
@@ -33,7 +33,7 @@ public class createLevelFromXML
         //Creamos cada uno de los items definidos en el XML en la posicion alli indicada, con el scale alli indicado. 
         foreach (structureXML.Item go in m_structureXML.prefabs.items)
         {
-            GameObject newGO = Managers.spawnerMgr.createGameObject(Managers.spawnerMgr.getPrefab(go.prefab), new Vector3(float.Parse(go.x), float.Parse(go.y), 0), Quaternion.identity);
+            GameObject newGO = Managers.spawnerMgr.createGameObject(Resources.Load("Prefabs/GamePrefabs/"+go.prefab) as GameObject, new Vector3(float.Parse(go.x), float.Parse(go.y), 0), Quaternion.identity);
             newGO.transform.localScale = new Vector3(float.Parse(go.scaleX), float.Parse(go.scaleY), 1);
             //Finalmente como padre ponemos al gameObject que representa el nivel
             newGO.transform.parent = goLevel.transform;

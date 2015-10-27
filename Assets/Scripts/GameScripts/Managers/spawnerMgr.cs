@@ -137,6 +137,11 @@ public class spawnerMgr : MonoBehaviour {
 
     public GameObject getPrefab(string prefabName)
     {
+        if (m_poolDeactivatedObjects[prefabName] == null)
+        {
+            return null;
+        }
+            
         return m_poolDeactivatedObjects[prefabName][0];
     }
 }

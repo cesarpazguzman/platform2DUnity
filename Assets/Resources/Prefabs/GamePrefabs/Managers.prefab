@@ -91,6 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsInGame:
   - Level1
+  - Level2
+  - Level3
 --- !u!114 &11480002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cfafece8a32894a9e8d3eaa6244e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_lastSecondsAlarm: 10
 --- !u!114 &11493606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,7 +125,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_levelsInGame.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cacheInitialObjects.Array.size
@@ -144,6 +147,14 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 131086, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_levelsInGame.Array.data[1]
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_levelsInGame.Array.data[2]
+      value: Level3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186108}

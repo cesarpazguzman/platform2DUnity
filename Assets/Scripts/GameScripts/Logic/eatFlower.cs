@@ -10,17 +10,19 @@ public class eatFlower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+       
 	}
 
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Player")
-        {
+        {     
             //Llamos al metodo finalizar nivel del gameMgr. Falta de implementarlo todavía. 
             Managers.gameMgr.finishLevel();
-            //Destruimos la flor
+            //Destruimos la flor. La ponemos como hija de la escena, ya que va a ser reutilizada y no queremos que al destruir el nivel
+            //tambien se destruya la flor   
             Managers.spawnerMgr.destroyGameObject(this.gameObject, false);
+            transform.parent = Managers.sceneMgr.getRootScene().transform;
         }
     }
 }

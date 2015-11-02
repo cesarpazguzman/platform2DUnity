@@ -7,7 +7,13 @@ using System.Collections;
 /// </summary>
 public class timeManager : MonoBehaviour 
 {
+    //Variable que lleva cuenta de los segundos en los que la cabra empieza a quedarse sin hambre. Cuando llegue a cero la cabra muere
     private int m_seconds;
+    //Saber los segundos iniciales
+    private int m_secondsInitial;
+    //Variable que indica el porcentaje de tiempo que queda, o que es lo mismo, de comida que le quede a la cabra en el estomago
+    private int m_percent;
+    public int percent { get { return m_percent; } }
 
     //Variable que indica a partir de cuantos segundos que queden, se establece como alarma para empezar a indicarle al usuario que le queda poco tiempo
     [SerializeField]
@@ -19,7 +25,7 @@ public class timeManager : MonoBehaviour
         set 
         {
             StopCoroutine("updateTime");
-            m_seconds = value; 
+            m_seconds = m_secondsInitial = value; 
             StartCoroutine("updateTime");
             
         }
@@ -45,10 +51,10 @@ public class timeManager : MonoBehaviour
     {
         while (m_seconds > 0) //Mientras haya tiempo
         {
-            --m_seconds;
-
             //Aqui se lo indicariamos a la interfaz, al componente Text del elemento UI que indica el tiempo
             showTimeUI();
+            
+            --m_seconds;
 
             //Podemos reproducir un sonido de tic tic tic de reloj, cuando queden 10 segundos para indicarle al jugador que le queda poco tambien
             //por la parte del sonido
@@ -67,7 +73,8 @@ public class timeManager : MonoBehaviour
     //Funcion que se llamará cuando cojamos por ejemplo un elemento de Aumento de tiempo. 
     public void addTime(int timeToAdd)
     {
-        m_seconds += timeToAdd;
+        //Añadimos tiempo, pero no más tiempo del tiempo inicial, para establecer un máximo
+        m_seconds = Mathf.Min(timeToAdd + m_seconds, m_secondsInitial);
     }
 
     //Funcion que se llama desde la corutina, que sirve para mostrar el tiempo en la interfaz. 
@@ -75,13 +82,9 @@ public class timeManager : MonoBehaviour
     {
 
         //ESTO SE CAMBIARÁ POSTERIORMENTE CUANDO EXISTE ESTE ELEMENTO DE INTERFAZ PARA EL TIEMPO. Esta sería la base
+        m_percent = (int)((float)m_seconds / (float)m_secondsInitial * 100);
 
-        int minutesUI = m_seconds / 60;
-        int secondsUI = m_seconds % 60;
-        string text = "Tiempo restate: " + ((minutesUI < 10) ? "0" : "") + minutesUI + ":" + ((secondsUI < 10) ? "0" : "") + secondsUI;
-        Debug.Log(text);
-
-
+        Debug.Log("Porcentaje de comida en el estomago: "+(int)m_percent);
         //Podemos cambiar el color cuando queden los ultimos 10 segundos por ejemplo, si esta dentro del tiempo de alarma de los ultimos
         //segundos, se pone a rojo, indicando situacion limite, sino blanco indicando normalidad.
         string color = (m_seconds > m_lastSecondsAlarm) ? "blanco" : "rojo";

@@ -82,7 +82,7 @@ public class playerController : MonoBehaviour {
 
 
         //Obtenemos hacia donde esta caminando en X. Si el resultado es negativo significa que vamos a la izquierda, si es positivo es que vamos a la derecha
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxisRaw("Horizontal");
         if (horizontal != 0)
         {
             //Animacion de correr si tiene
@@ -136,5 +136,16 @@ public class playerController : MonoBehaviour {
                 m_isJumping = false;
             }
         }
+    }
+
+
+    /// <summary>
+    /// Este juego ha sido planteado en la misma escena, cargando un nuevo nivel mediante archivos XML, pero todo en la misma escena con el mismo personaje
+    /// Dado que el movimiento del personaje lo movemos con la física, debemos de setear a 0 las velocidades, debido a que comenzamos un nuevo nivel
+    /// y no queremos que comience con la velocidad con la que se terminó el anterior nivel
+    /// </summary>
+    public void newLevel()
+    {
+        m_rigi.velocity = Vector2.zero;
     }
 }

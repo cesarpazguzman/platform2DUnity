@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 186178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.13999999, y: -2.25999999, z: 0}
-  m_LocalScale: {x: 1, y: .219999999, z: 1}
+  m_LocalScale: {x: 1, y: .400000006, z: 1}
   m_Children:
   - {fileID: 430436}
   m_Father: {fileID: 0}
@@ -71,9 +71,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -.0232629776, y: .471060932}
+  m_Offset: {x: .000318408012, y: .260514021}
   serializedVersion: 2
-  m_Size: {x: 2.45347404, y: .935391963}
+  m_Size: {x: 2.56127405, y: .514298439}
 --- !u!61 &6148666
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -84,9 +84,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -.00851011276, y: 0}
+  m_Offset: {x: .00159621239, y: -.00421106815}
   serializedVersion: 2
-  m_Size: {x: 2.44672918, y: 1}
+  m_Size: {x: 2.56126666, y: .334671587}
 --- !u!114 &11430644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinDistance: .100000001
-  m_MovementSpeed: .400000006
+  m_MovementSpeed: .800000012
   localWaypoints:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 1.5, z: 0}
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 52628849
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af7fc0740ee8d824787a37db2af8bdb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d53d608d75490ee49b52ad2ec94acccf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -175,6 +175,19 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: localWaypoints.Array.data[3].y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d53d608d75490ee49b52ad2ec94acccf,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_MovementSpeed
+      value: .800000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

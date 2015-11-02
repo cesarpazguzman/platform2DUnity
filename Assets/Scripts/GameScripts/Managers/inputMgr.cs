@@ -10,46 +10,36 @@ using System.Collections;
 ///
 public class inputMgr : MonoBehaviour {
 
-    private bool paused;
-    private GameObject menuPausa;
+    private sceneMgr m_sceneMgr;
+
 
 	// Use this for initialization
 	void Start () 
     {
-        
+        m_sceneMgr = Managers.sceneMgr;
 	}
-
-    void OnEnable()
-    {
-        paused = false;
-    }
 
 	// Update is called once per frame
 	void Update () 
     {
-        //Si estamos en la escena de juego y pulsamos la tecla de pause
-        
-        if ((Application.loadedLevelName == "game" || Application.loadedLevelName == "__game_Cesar") && Input.GetButtonDown("Pause"))
-         {
-             pauseResumeGame();           
-         }
+        //Si estamos en la escena de juego, en el estado de que estamos jugando y pulsamos la tecla de pause
+        if (m_sceneMgr.getCurrentState() == sceneMgr.states.game && Input.GetButtonDown("Pause"))
+        {
+            //Pausamos el juego
+            Time.timeScale = 0.0f;
+
+            //Cambiamos el estado a Pause
+            m_sceneMgr.addState(sceneMgr.states.pause);
+        }
+        //Si estamos en el estado de pausa, volvemos al estado de juego al pulsar el boton Return
+        else if (m_sceneMgr.getCurrentState() == sceneMgr.states.pause && Input.GetButtonDown("Return"))
+        {
+            //Volvemos al estado de juego
+            Time.timeScale = 1.0f;
+
+            //Eliminamos el estado de pausa
+            m_sceneMgr.removeCurrentState();
+        }
 	}
 
-    //Funcion llamada por la intervencion de la tecla de pause y quitar pause
-    public void pauseResumeGame()
-    {
-        paused = !paused;
-        Time.timeScale = (paused) ? 0.0f : 1.0f;
-
-        if (paused)
-        {
-            //Que aparezca el menú de pausa.
-            menuPausa = Managers.spawnerMgr.createGameObject(Resources.Load("Menu Pausa") as GameObject, Vector3.zero, Quaternion.identity);
-        }
-        else
-        {
-            //Destuimos el menú
-            Managers.spawnerMgr.destroyGameObject(menuPausa, false);
-        }
-    }
 }

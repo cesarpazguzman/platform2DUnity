@@ -4,16 +4,12 @@ using System.Collections;
 
 public class functionsMenus : MonoBehaviour
 {
+    //MENU PRINCIPAL
+
     //Cuando pulsamos a "PLAY" cargamos el primer nivel del juego
     public void StartLevel()
     {
         Application.LoadLevel(1);
-    }
-
-    //Cuando pulsamos "TOP SCORES" pasamos a las opciones del juego
-    public void TopScores()
-    {
-
     }
 
     //Cuando pulsamos "CREDITS" pasamos a las opciones del juego
@@ -22,7 +18,6 @@ public class functionsMenus : MonoBehaviour
 
     }
 
-
     //Cuando pulsamos "EXIT" en el menú, salimos al escritorio
     public void ExitGame()
     {
@@ -30,10 +25,17 @@ public class functionsMenus : MonoBehaviour
 
     }
 
+
+    //MENU DE PAUSA
+
     //Cuando pulsamos "RESUME" volvemos al juego
     public void ResumeLevel()
     {
-        Managers.inputMgr.pauseResumeGame();
+        //Volvemos al estado de juego
+        Time.timeScale = 1.0f;
+
+        //Eliminamos el estado de pausa
+        Managers.sceneMgr.removeCurrentState();
     }
 
     //Cuando pulsamos "SETTINGS" pasamos a las opciones del juego
@@ -45,13 +47,29 @@ public class functionsMenus : MonoBehaviour
     //Cuando pulsamos "RESTART LEVEL" volvemos a cargar el prefab del nivel en el que nos encontramos y con el tiempo inicial
     public void RestartLevel()
     {
+        //Hacemos desaparecer el menu de nivel completado
+        Managers.sceneMgr.removeCurrentState();
 
+        //Restart del nivel
+        Managers.sceneMgr.restartLevel();
     }
 
     //Cuando pulsamos "EXIT TO MAIN MENU" salimos al menu principal
     public void ReturnMenu()
     {
+        //Cargamos el menú principal
         Application.LoadLevel(0);
-        Managers.inputMgr.pauseResumeGame(); //Lo hago pues sigue recordando que la escena estaba en pausa pro alguna extraña razon
+
+        Managers.gameMgr.exitGame();
+    }
+
+    //MENU COMPLETE LEVEL
+    public void nextLevel()
+    {
+        //Cargamos un nuevo nivel
+        Managers.sceneMgr.nextLevel();  
+
+        //Hacemos desaparecer el menu de nivel completado
+        Managers.sceneMgr.removeCurrentState();     
     }
 }

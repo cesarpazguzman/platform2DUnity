@@ -9,6 +9,7 @@ public class spawnerMgr : MonoBehaviour {
     //id único que define al siguiente gameObject que se creara o se sacará del pool, servirá para ponerle un nombre único
     private int m_nextID;
 
+
     void Awake()
     {
         m_poolDeactivatedObjects = new Dictionary<string, List<GameObject>>();

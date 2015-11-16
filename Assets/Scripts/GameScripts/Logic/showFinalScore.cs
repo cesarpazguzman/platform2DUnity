@@ -12,7 +12,11 @@ public class showFinalScore : MonoBehaviour
 
     void OnEnable()
     {
-        gameObject.GetSafeComponent<Text>().text = Managers.GetInstance.TimeMgr.percent.ToString() + "%";
+        gameObject.GetSafeComponent<Text>().color = (Managers.GetInstance.StorageMgr.dictionaryScore[Managers.GetInstance.SceneMgr.currentLevel + 1] < Managers.GetInstance.TimeMgr.getPercent())
+            ? Color.green : Color.black;
+
+        gameObject.GetSafeComponent<Text>().text = Managers.GetInstance.TimeMgr.getPercent().ToString() + "%";
+        Managers.GetInstance.StorageMgr.setScore(Managers.GetInstance.SceneMgr.currentLevel + 1, Managers.GetInstance.TimeMgr.getPercent());
     }
 	
 	// Update is called once per frame

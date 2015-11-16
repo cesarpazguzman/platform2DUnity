@@ -9,10 +9,11 @@ public class gameStateMgr : MonoBehaviour
     public GameObject menuPause;
     public GameObject menuCompletLevel;
     public GameObject menuGameOver;
+    public GameObject menuLevels;
 
     private Dictionary<int, GameObject> m_menuDictionary = new Dictionary<int, GameObject>();
 
-    public enum states { MainMenu, Game, GameOver, Pause, CompleteLevelMenu };
+    public enum states { MainMenu, Game, GameOver, Pause, CompleteLevelMenu, Levels};
     public states initialState;
 
     //Pila de estados actuales
@@ -21,6 +22,8 @@ public class gameStateMgr : MonoBehaviour
     private int m_currentState = -1;
     //Property 
     public int currentState { get { return m_currentState; } }
+
+    public bool isGame;
 
     void Awake()
     {
@@ -33,9 +36,12 @@ public class gameStateMgr : MonoBehaviour
         m_menuDictionary.Add((int)states.Pause, null);
         m_menuDictionary.Add((int)states.CompleteLevelMenu, null);
         m_menuDictionary.Add((int)states.GameOver, null);
+        m_menuDictionary.Add((int)states.Levels, null);
 
         //Set the initialState like current state
         setState(initialState);
+
+        isGame = false;
     }
 
     // Update is called once per frame
@@ -49,14 +55,12 @@ public class gameStateMgr : MonoBehaviour
         //Register the callbacks when ESC is pressed
         Managers.GetInstance.InputMgr.RegisterReturn(states.MainMenu, exitGame);
         Managers.GetInstance.InputMgr.RegisterReturn(states.Game, pause);
-        Managers.GetInstance.InputMgr.RegisterReturn(states.Pause, reanude);
+        Managers.GetInstance.InputMgr.RegisterReturn(states.Pause, popState);
         Managers.GetInstance.InputMgr.RegisterReturn(states.GameOver, exitGame);
-        
+        Managers.GetInstance.InputMgr.RegisterReturn(states.Levels, popState);
 
         //Register the callbacks when Enter is pressed
-        Managers.GetInstance.InputMgr.RegisterEnter(states.MainMenu, startGame);
-        Managers.GetInstance.InputMgr.RegisterEnter(states.GameOver, startGame);
-        Managers.GetInstance.InputMgr.RegisterEnter(states.CompleteLevelMenu, nextLevel);
+        Managers.GetInstance.InputMgr.RegisterEnter(states.MainMenu, showMenuLevels);
     }
 
     void OnDisable()
@@ -64,13 +68,12 @@ public class gameStateMgr : MonoBehaviour
         //Desregister the callbacks when ESC is pressed
         Managers.GetInstance.InputMgr.DesRegisterReturn(states.MainMenu, exitGame);
         Managers.GetInstance.InputMgr.DesRegisterReturn(states.Game, pause);
-        Managers.GetInstance.InputMgr.DesRegisterReturn(states.Pause, reanude);
+        Managers.GetInstance.InputMgr.DesRegisterReturn(states.Pause, popState);
         Managers.GetInstance.InputMgr.DesRegisterReturn(states.GameOver, exitGame);
+        Managers.GetInstance.InputMgr.DesRegisterReturn(states.Levels, popState);
 
         //Desregister the callbacks when Enter is pressed
-        Managers.GetInstance.InputMgr.DesRegisterEnter(states.MainMenu, startGame);
-        Managers.GetInstance.InputMgr.DesRegisterEnter(states.GameOver, startGame);
-        Managers.GetInstance.InputMgr.DesRegisterEnter(states.CompleteLevelMenu, nextLevel);
+        Managers.GetInstance.InputMgr.DesRegisterEnter(states.MainMenu, showMenuLevels);
     }
 
     public void setState(states state)
@@ -94,6 +97,11 @@ public class gameStateMgr : MonoBehaviour
         //Wait for end frame in order to prevent problems during this frame
         yield return new WaitForEndOfFrame();
 
+        if(m_menuDictionary.ContainsKey((int)m_states.Peek()))
+        {
+            Managers.GetInstance.SpawnerMgr.destroyGameObject(m_menuDictionary[(int)m_states.Peek()]);
+        }
+
         m_states.Pop();
 
         m_currentState = (int)m_states.Peek();
@@ -105,8 +113,16 @@ public class gameStateMgr : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         if (clear)
-        {
+        {   
+            foreach (states st in m_states)
+            {
+                if(m_menuDictionary.ContainsKey((int)st))
+                {
+                    Managers.GetInstance.SpawnerMgr.destroyGameObject(m_menuDictionary[(int)st]);
+                }
+            }
             m_states.Clear();
+            isGame = (state == states.Game) ? true : false;
         }
 
         m_states.Push(state);
@@ -127,37 +143,26 @@ public class gameStateMgr : MonoBehaviour
         }
     }
 
-    public void reanude()
+    public void startLevel(int level)
     {
-        //Deactivate the gameObject menuPause
-        Managers.GetInstance.SpawnerMgr.destroyGameObject(m_menuDictionary[(int)states.Pause]);
-
-        //Remove the state pause
-        popState();
-    }
-
-    public void startGame()
-    {
-        //Load the scene game
-        Application.LoadLevel(1);
         setState(states.Game);
+        if (isGame)
+        {    
+            Managers.GetInstance.SceneMgr.startLevel(level);
+        }
+        else
+        {
+            //Load the scene game
+            Application.LoadLevel(1);
+            Managers.GetInstance.GameMgr.levelToStart = level;
+        }    
     }
 
     public void exitGame()
     {
+        Managers.GetInstance.StorageMgr.writeFile();
         //Exit the application
         Application.Quit();
-    }
-
-    public void nextLevel()
-    {
-        if (!Managers.GetInstance.SceneMgr.isLastLevel)
-        {
-            //Cargamos un nuevo nivel
-            Managers.GetInstance.SpawnerMgr.destroyGameObject(m_menuDictionary[(int)states.CompleteLevelMenu]);
-            Managers.GetInstance.SceneMgr.nextLevel();
-            popState();
-        }
     }
 
     public void finishLevel()
@@ -168,11 +173,6 @@ public class gameStateMgr : MonoBehaviour
 
     public void restartLevel()
     {
-        //Como la accion de reiniciar un nivel solo se puede hacer desde un menu, lo que hago es acceder al menu actual y destruirlo
-        if (m_menuDictionary.ContainsKey(m_currentState))
-        {
-            Managers.GetInstance.SpawnerMgr.destroyGameObject(m_menuDictionary[m_currentState]);
-        }
         setState(gameStateMgr.states.Game);    
     }
 
@@ -180,5 +180,12 @@ public class gameStateMgr : MonoBehaviour
     {
         m_menuDictionary[(int)states.GameOver] = Managers.GetInstance.SpawnerMgr.createGameObject(menuGameOver);
         pushState(gameStateMgr.states.GameOver);
+    }
+
+    public void showMenuLevels()
+    {
+        m_menuDictionary[(int)states.Levels] = Managers.GetInstance.SpawnerMgr.createGameObject(menuLevels);
+        m_menuDictionary[(int)states.Levels].GetSafeComponent<scoreLevels>().showScore();
+        pushState(gameStateMgr.states.Levels);
     }
 }

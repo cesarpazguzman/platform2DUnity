@@ -28,6 +28,7 @@ public class Managers
         if (m_managers == null)
         {
             m_managers = GameObject.FindGameObjectWithTag("Managers");
+          
             if (m_managers == null)
             {
                 //Create the gameObject

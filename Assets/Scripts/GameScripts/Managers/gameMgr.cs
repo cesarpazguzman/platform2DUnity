@@ -24,6 +24,8 @@ public class gameMgr : MonoBehaviour {
     public delegate void Restart();
     public static event Restart restartGame;
 
+    public int levelToStart;
+
 	// Use this for initialization
 	void Start () {
 	    
@@ -56,7 +58,7 @@ public class gameMgr : MonoBehaviour {
     public void initGame()
     {
         //Llamamos al metodo de next level del sceneMgr para que se cargue el siguiente nivel, es decir, en este caso el primero
-        Managers.GetInstance.SceneMgr.nextLevel();
+        Managers.GetInstance.SceneMgr.startLevel(levelToStart);
     }
 
 

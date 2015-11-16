@@ -20,6 +20,7 @@ public class sceneMgr : MonoBehaviour {
     private List<string> m_levelsInGame;
 
     private int m_currentLevel;
+    public int currentLevel { get { return m_currentLevel; } }
     private GameObject m_currentLevelGameObject = null;
 
     private createLevelFromXML createLevel;
@@ -31,13 +32,6 @@ public class sceneMgr : MonoBehaviour {
         {
             m_spawnPointPlayer = value;
         }
-    }
-
-    //Propiedad que me indica el actual nivel en el que estoy
-    public int getCurrentLevel
-    {
-        get { return m_currentLevel; }
-        set { m_currentLevel = value; }
     }
 
     private GameObject m_rootScene = null;
@@ -62,12 +56,9 @@ public class sceneMgr : MonoBehaviour {
 	// Use this for initialization
     void Awake()
     {
-        m_currentLevel = 0;
-
         createLevel = new createLevelFromXML();
 
-        m_currentIndexLevel = Application.loadedLevel;
-        
+        m_currentIndexLevel = Application.loadedLevel;    
     }
 
 	void Start () 
@@ -93,17 +84,15 @@ public class sceneMgr : MonoBehaviour {
     //Esta función simplemente será llamada cuando volvamos al menú principal.
     public void restartGame()
     {
-        m_currentLevel = 0;
         m_currentLevelGameObject = null;
     }
 
-    public void nextLevel()
+    public void startLevel(int level)
     {
+        m_currentLevel = level - 1;
         if (m_currentLevelGameObject != null)
         {
             Managers.GetInstance.SpawnerMgr.destroyGameObject(m_currentLevelGameObject, true);
-            //Nuevo nivel
-            ++m_currentLevel;
         }
 
         //Instanciamos un nuevo nivel

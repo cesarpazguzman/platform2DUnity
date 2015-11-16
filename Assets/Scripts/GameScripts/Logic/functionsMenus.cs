@@ -16,9 +16,15 @@ public class functionsMenus : MonoBehaviour
     }
 
     //Main Menu
-    public void startGame()
+
+    public void showMenuLevels()
     {
-        m_gameStateMgr.startGame();
+        m_gameStateMgr.showMenuLevels();
+    }
+
+    public void startGame(int level)
+    {
+        m_gameStateMgr.startLevel(level);
     }
 
     //Cuando pulsamos "CREDITS" pasamos a las opciones del juego
@@ -39,7 +45,7 @@ public class functionsMenus : MonoBehaviour
     //Cuando pulsamos "RESUME" volvemos al juego
     public void ResumeLevel()
     {
-        m_gameStateMgr.reanude();
+        m_gameStateMgr.popState();
     }
 
     //Cuando pulsamos "SETTINGS" pasamos a las opciones del juego
@@ -63,11 +69,5 @@ public class functionsMenus : MonoBehaviour
         m_gameStateMgr.setState(gameStateMgr.states.MainMenu);
 
         Managers.GetInstance.GameMgr.exitGame();
-    }
-
-    //MENU COMPLETE LEVEL
-    public void nextLevel()
-    {
-        m_gameStateMgr.nextLevel();
     }
 }

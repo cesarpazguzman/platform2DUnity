@@ -25,10 +25,12 @@ public class playerController : MonoBehaviour {
     private bool m_isGround;
     private bool m_isTouchingTop;
 
+    public bool isDistanceJoint;
+
 	// Use this for initialization
 	void Start () 
     {
-
+        isDistanceJoint = false;
         m_lookAtRight = true;
         m_isJumping = false;
         m_completeJump = false;
@@ -44,14 +46,14 @@ public class playerController : MonoBehaviour {
 	void Update () 
     {
         //Si estamos pulsando la tecla, y ademas no estamos saltando y ademas estamos en el suelo, salto
-        if (Input.GetButton("Jump") && !m_isJumping && m_isGround)
+        if (Input.GetButton("Jump") && !m_isJumping && (m_isGround || isDistanceJoint))
         {
             //Debug.Log("Entra");
             m_isJumping = true;
             m_completeJump = false;
         }
 
-        //Si suelo el boton paro el salto
+        //Si suelto el boton paro el salto
         if (Input.GetButtonUp("Jump"))
         {
             m_isJumping = false;
@@ -147,5 +149,7 @@ public class playerController : MonoBehaviour {
     public void newLevel()
     {
         m_rigi.velocity = Vector2.zero;
+        this.gameObject.GetSafeComponent<DistanceJoint2D>().enabled = false;
+        isDistanceJoint = false;
     }
 }

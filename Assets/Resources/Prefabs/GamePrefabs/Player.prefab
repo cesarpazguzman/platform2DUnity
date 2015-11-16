@@ -27,6 +27,8 @@ GameObject:
   - 50: {fileID: 5005078}
   - 114: {fileID: 11438772}
   - 61: {fileID: 6125032}
+  - 232: {fileID: 23212812}
+  - 114: {fileID: 11421218}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -172,6 +174,17 @@ BoxCollider2D:
   m_Offset: {x: -.00395804644, y: -.00520318747}
   serializedVersion: 2
   m_Size: {x: .611584127, y: .599162161}
+--- !u!114 &11421218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163d2a2a6e22cb4e886788f8b2d9754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11438772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +205,7 @@ MonoBehaviour:
   groundCheckedRight: {fileID: 180946}
   topCheckedRight: {fileID: 102404}
   topCheckedLeft: {fileID: 174328}
+  isDistanceJoint: 0
 --- !u!212 &21259618
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -218,6 +232,20 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ff36666af3d0003428165e6426ff250f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!232 &23212812
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131086}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_Distance: .600000024
+  m_MaxDistanceOnly: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -230,6 +258,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ff36666af3d0003428165e6426ff250f,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Distance
+      value: .600000024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131086}

@@ -15,7 +15,7 @@ public class eatFlower : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player" && Managers.GetInstance.TimeMgr.getPercent()>0)
         {     
             //Llamos al metodo finalizar nivel del gameMgr. Falta de implementarlo todavía. 
             Managers.GetInstance.GameMgr.finishLevel();

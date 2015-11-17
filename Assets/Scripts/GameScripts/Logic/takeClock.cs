@@ -19,7 +19,7 @@ public class takeClock : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll)
     {
         //Si el reloj lo toca el player
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.CompareTag("Player"))
         {
             //Aumentamos el tiempo y lo borramos de la escena
             Managers.GetInstance.TimeMgr.addTime(m_extraTime);

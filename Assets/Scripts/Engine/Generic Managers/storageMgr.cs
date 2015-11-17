@@ -44,11 +44,24 @@ public class storageMgr : MonoBehaviour {
     //Funcion que lee fichero json
     private void readFile()
     {
-        List<levelsDef> dataLevels = JsonMapper.ToObject<List<levelsDef>>(File.ReadAllText(Application.dataPath+ "/Resources/scoreLevels.json"));
-        foreach (levelsDef level in dataLevels)
+        //Si es la primera vez que se juega, entonces el fichero no existira, por lo que lo comprobamos
+        if(System.IO.File.Exists(Application.persistentDataPath+ "/scoreLevels.json"))
         {
-            m_dictionaryScore.Add(level.level, level.score);
+            List<levelsDef> dataLevels = JsonMapper.ToObject<List<levelsDef>>(File.ReadAllText(Application.persistentDataPath+ "/scoreLevels.json"));
+            foreach (levelsDef level in dataLevels)
+            {
+                m_dictionaryScore.Add(level.level, level.score);
+            }
         }
+        else
+        {
+            //Sino, guardamos en el diccionario que todos los niveles almacenados tienen puntuacion 0
+            for(int i= 1; i<= Managers.GetInstance.SceneMgr.levelsInGame.Count; ++i)
+            {
+                m_dictionaryScore.Add(i, 0);
+            }
+        }
+        
     }
 
     public void setScore(int level, int score)
@@ -71,7 +84,7 @@ public class storageMgr : MonoBehaviour {
 
         //Serializamos esa lista y la escribimos en la ruta indicada.
         fileJson = JsonMapper.ToJson(m_leveldef);
-        File.WriteAllText(Application.dataPath + "/Resources/scoreLevels.json", fileJson.ToString());
+        File.WriteAllText(Application.persistentDataPath + "/scoreLevels.json", fileJson.ToString());
     }
 
 

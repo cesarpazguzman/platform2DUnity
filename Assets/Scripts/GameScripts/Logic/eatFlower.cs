@@ -15,12 +15,12 @@ public class eatFlower : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Player" && Managers.GetInstance.TimeMgr.getPercent()>0)
+        //Solo se destruye si es el Player quien la coge y si estamos dentro del limite de comida permitido
+        if (coll.gameObject.CompareTag("Player") && Managers.GetInstance.TimeMgr.getPercent()>0)
         {     
-            //Llamos al metodo finalizar nivel del gameMgr. Falta de implementarlo todavía. 
+            //Llamos al metodo finalizar nivel del gameMgr. 
             Managers.GetInstance.GameMgr.finishLevel();
-            //Destruimos la flor. La ponemos como hija de la escena, ya que va a ser reutilizada y no queremos que al destruir el nivel
-            //tambien se destruya la flor   
+            //Destruimos la flor. La ponemos como hija de la escena, ya que va a ser reutilizada y no queremos que al destruir el nivel tambien se destruya    
             Managers.GetInstance.SpawnerMgr.destroyGameObject(this.gameObject);
         }
     }

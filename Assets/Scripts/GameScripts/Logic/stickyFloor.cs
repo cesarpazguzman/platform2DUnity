@@ -17,7 +17,7 @@ public class stickyFloor : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Player")
+        if (coll.CompareTag("Player"))
         {
             coll.transform.parent = transform;
         }
@@ -25,7 +25,7 @@ public class stickyFloor : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.tag == "Player")
+        if (coll.CompareTag("Player"))
         {
             coll.transform.parent = Managers.GetInstance.SceneMgr.rootScene.transform;
         }

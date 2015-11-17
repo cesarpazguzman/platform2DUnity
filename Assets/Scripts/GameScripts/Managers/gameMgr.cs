@@ -24,11 +24,10 @@ public class gameMgr : MonoBehaviour {
     public delegate void Restart();
     public static event Restart restartGame;
 
-    public int levelToStart;
+    public int levelToStart = 1;
 
 	// Use this for initialization
 	void Start () {
-	    
 	}
 
     /// <summary>

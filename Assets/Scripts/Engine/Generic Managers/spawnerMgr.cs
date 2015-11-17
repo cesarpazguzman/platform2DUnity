@@ -105,7 +105,7 @@ public class spawnerMgr : MonoBehaviour {
     }
 
     //Funcion que vacía todo el pool de objetos desactivados. 
-    private void clearPool()
+    public void clearPool()
     {
         foreach (List<GameObject> listObject in m_poolDeactivatedObjects.Values)
         {
@@ -123,9 +123,7 @@ public class spawnerMgr : MonoBehaviour {
     {
         //Limpiamos el pool de objetos desactivados para la nueva escena
         clearPool();
-
-        
-        
+    
         //Obtenemos cada elemento de la lista
         foreach( prebuildObjects.initialObjects cacheInitial in initialObjects.cacheInitialObjects)
         {

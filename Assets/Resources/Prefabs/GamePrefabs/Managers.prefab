@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9533c63c1e95840bd64c5afcde4f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToStart: 0
+  levelToStart: 1
 --- !u!114 &11414680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +99,7 @@ MonoBehaviour:
   menuGameOver: {fileID: 169202, guid: 115ecc64a35280f418da674108c76fe1, type: 2}
   menuLevels: {fileID: 192266, guid: 8e064938c676c1a4da54a5f03d4a2a4f, type: 2}
   initialState: 0
+  isGame: 0
 --- !u!114 &11480002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,6 +206,10 @@ Prefab:
       propertyPath: levels.Array.data[4]
       value: 
       objectReference: {fileID: 121300, guid: 8e064938c676c1a4da54a5f03d4a2a4f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: levelToStart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186108}

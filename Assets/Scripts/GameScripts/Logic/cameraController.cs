@@ -11,8 +11,8 @@ public class cameraController : MonoBehaviour {
         m_posYCameraInitial = transform.position.y;
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	//Llamamos con lateUpdate, porque asi garantizamos que la cámara cambia con la nueva posicion del player del frame determinado
+	void LateUpdate () {
 
         //En cada tick, lo que hacemos es actualizar la posición de la cámara según el player. El parámetro Y nunca bajará de la Y de la posición
         //inicial de la cámara, para que no baje más del campo de visión inicial, que es donde empieza el escenario. 

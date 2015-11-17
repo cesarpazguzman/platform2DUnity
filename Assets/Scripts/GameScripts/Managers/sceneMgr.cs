@@ -18,6 +18,7 @@ public class sceneMgr : MonoBehaviour {
     //VARIABLES RELATIVAS A LOS NIVELES DEL JUEGO
     [SerializeField]
     private List<string> m_levelsInGame;
+    public List<string> levelsInGame { get { return m_levelsInGame; } }
 
     private int m_currentLevel;
     public int currentLevel { get { return m_currentLevel; } }
@@ -45,6 +46,7 @@ public class sceneMgr : MonoBehaviour {
             {
                 m_rootScene = GameObject.Find(Application.loadedLevelName);
                 m_currentIndexLevel = Application.loadedLevel;
+                Managers.GetInstance.SpawnerMgr.clearPool();
             }
             return m_rootScene;
         }
@@ -95,6 +97,7 @@ public class sceneMgr : MonoBehaviour {
             Managers.GetInstance.SpawnerMgr.destroyGameObject(m_currentLevelGameObject, true);
         }
 
+        Debug.Log("Tam: " + m_currentLevel);
         //Instanciamos un nuevo nivel
         m_currentLevelGameObject = createLevel.generateLevel(m_levelsInGame[m_currentLevel]);
 

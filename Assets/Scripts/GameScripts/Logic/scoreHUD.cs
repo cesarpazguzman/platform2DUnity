@@ -5,6 +5,8 @@ using System.Collections;
 public class scoreHUD : MonoBehaviour {
 
     private Text m_hud;
+
+    public 
 	// Use this for initialization
 	void Start () {
         m_hud = this.gameObject.GetComponent<Text>();

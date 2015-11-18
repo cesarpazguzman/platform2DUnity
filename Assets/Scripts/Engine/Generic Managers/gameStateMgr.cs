@@ -96,7 +96,6 @@ public class gameStateMgr : MonoBehaviour
     {
         //Wait for end frame in order to prevent problems during this frame
         yield return new WaitForEndOfFrame();
-
         if(m_menuDictionary.ContainsKey((int)m_states.Peek()))
         {
             Managers.GetInstance.SpawnerMgr.destroyGameObject(m_menuDictionary[(int)m_states.Peek()]);

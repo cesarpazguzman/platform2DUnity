@@ -52,6 +52,9 @@ public class sceneMgr : MonoBehaviour {
         }
     }
 
+    public delegate void m_newLevel();
+    public static event m_newLevel newLevel;
+
     //Funcion que me devuelve el numero de niveles que tiene el juego
     public bool isLastLevel { get {return m_currentLevel == m_levelsInGame.Count-1; }}
 
@@ -98,7 +101,8 @@ public class sceneMgr : MonoBehaviour {
             Managers.GetInstance.SpawnerMgr.destroyGameObject(m_currentLevelGameObject, true);
         }
 
-        Debug.Log("Tam: " + m_currentLevel);
+        newLevel();
+
         //Instanciamos un nuevo nivel
         m_currentLevelGameObject = createLevel.generateLevel(m_levelsInGame[m_currentLevel]);
 

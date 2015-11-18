@@ -65,9 +65,11 @@ public class functionsMenus : MonoBehaviour
     //Cuando pulsamos "EXIT TO MAIN MENU" salimos al menu principal
     public void ReturnMenu()
     {
-        Application.LoadLevel(0);
+        if (Application.loadedLevel != 0)
+        {
+            Application.LoadLevel(0);
+            Managers.GetInstance.GameMgr.exitGame();
+        }
         m_gameStateMgr.setState(gameStateMgr.states.MainMenu);
-
-        Managers.GetInstance.GameMgr.exitGame();
     }
 }

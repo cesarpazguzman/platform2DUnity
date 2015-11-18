@@ -8,12 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419952}
+  - 114: {fileID: 11493606}
   - 114: {fileID: 11407072}
   - 114: {fileID: 11468312}
   - 114: {fileID: 11401344}
   - 114: {fileID: 11414680}
   - 114: {fileID: 11480002}
-  - 114: {fileID: 11493606}
   - 114: {fileID: 11473812}
   m_Layer: 0
   m_Name: Managers

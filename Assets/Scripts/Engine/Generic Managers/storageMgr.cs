@@ -31,9 +31,13 @@ public class storageMgr : MonoBehaviour {
 
     private JsonData fileJson;
 
+    void Awake()
+    {
+        readFile();
+    }
 	// Use this for initialization
 	void Start () {
-        readFile();
+        
 	}
 	
 	// Update is called once per frame

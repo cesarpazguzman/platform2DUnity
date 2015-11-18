@@ -148,6 +148,7 @@ public class gameStateMgr : MonoBehaviour
         setState(states.Game);
         if (isGame)
         {    
+            //Empezamos el nuevo nivel
             Managers.GetInstance.SceneMgr.startLevel(level);
         }
         else

@@ -37,6 +37,10 @@ public class playerController : MonoBehaviour {
         m_isGround = false;
         m_isTouchingTop = false;
 
+        //Para que no me atraviese las plataformas delgadas...dado que puede ocurrir que la velocidad en y del player hacia abajo
+        //sea muy grande y traspasar la física.
+        this.gameObject.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
         //Animacion de Idle si tiene
 
 
@@ -77,7 +81,6 @@ public class playerController : MonoBehaviour {
         //se considera que el salto todavia no se acabo, y por tanto, la gravedad no bajaría al objeto.
         if (m_isTouchingTop)
         {
-            //Debug.Log("touchingTop");
             m_isJumping = false;
         }
 

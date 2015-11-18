@@ -94,6 +94,7 @@ public class sceneMgr : MonoBehaviour {
         m_currentLevel = level - 1;
         if (m_currentLevelGameObject != null)
         {
+            deactivateGameObjectsLevel();
             Managers.GetInstance.SpawnerMgr.destroyGameObject(m_currentLevelGameObject, true);
         }
 
@@ -119,10 +120,7 @@ public class sceneMgr : MonoBehaviour {
 
         //Para no tener que cargar de nuevo los elementos que forman este nivel, lo que hago es guardarlos en el spawnerMgr, para que al cargar
         //de nuevo el nivel, no haga falta instanciarlos de nuevo
-        foreach (Transform child in m_currentLevelGameObject.transform)
-        {
-            Managers.GetInstance.SpawnerMgr.destroyGameObject(child.gameObject);
-        }
+        deactivateGameObjectsLevel();
 
         //Borramos el nivel de cero para volver a instanciarlo con los objetos "comida" de nuevo
         Managers.GetInstance.SpawnerMgr.destroyGameObject(m_currentLevelGameObject, true);
@@ -135,5 +133,23 @@ public class sceneMgr : MonoBehaviour {
 
         //Spawneo al player en la posicion indicada en el nivel
         player.transform.position = m_spawnPointPlayer;
+    }
+
+    public void deactivateGameObjectsLevel()
+    {
+        List<GameObject> goDeactivate = new List<GameObject>();
+
+        //Dado que el gameObject que representa el nivel queremos eliminarlo, lo que hacemos es DESACTIVAR cada uno de sus hijos 
+        //y ponerlo a nivel de la escena, por lo que debemos guardarlo primero en una lista para despues desactivarlos y quitarlos
+        //del gameObject de la escena
+        foreach (Transform child in m_currentLevelGameObject.transform)
+        {
+            goDeactivate.Add(child.gameObject);
+        }
+
+        foreach (GameObject go in goDeactivate)
+        {
+            Managers.GetInstance.SpawnerMgr.destroyGameObject(go);
+        }
     }
 }

@@ -165,65 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88cdca7271b14744824d034928109ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &641175106
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 86417637}
-    m_Modifications:
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.90999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125032, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5005078, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 485422, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: .277999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 409994, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .213
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6125032, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &706533379
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +242,7 @@ Transform:
 --- !u!4 &747629224 stripped
 Transform:
   m_PrefabParentObject: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-  m_PrefabInternal: {fileID: 641175106}
+  m_PrefabInternal: {fileID: 1396562975}
 --- !u!1 &879178788
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,41 +424,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19e7adc879569974f94dd50b5cfdf1ea, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1306779662 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 131086, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
-  m_PrefabInternal: {fileID: 641175106}
---- !u!60 &1306779669
-PolygonCollider2D:
+--- !u!1001 &1396562975
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1306779662}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: .189999998, y: -.0299999993}
-      - {x: .280000001, y: -.100000001}
-      - {x: .314229578, y: -.0923062339}
-      - {x: .309946626, y: .0104977684}
-      - {x: .30461216, y: .0746122971}
-      - {x: .197987944, y: .188220829}
-      - {x: .192180961, y: .183693767}
-      - {x: .16043146, y: .322392076}
-      - {x: -.00368654728, y: .324784219}
-      - {x: -.0136863189, y: .258902103}
-      - {x: -.0299999993, y: .150000006}
-      - {x: .0599999987, y: .0599999987}
-      - {x: -.323846936, y: .0584489107}
-      - {x: -.319999993, y: -.319999993}
-      - {x: -.140000001, y: -.319999993}
-      - {x: -.0833399072, y: -.319637954}
-      - {x: -.0199999996, y: -.319999993}
-      - {x: .180000007, y: -.319999993}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 86417637}
+    m_Modifications:
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.90999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481700, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e220ad57ff4472442a70071a5076a0c4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!224 &1960425520 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22458350, guid: 19e7adc879569974f94dd50b5cfdf1ea,

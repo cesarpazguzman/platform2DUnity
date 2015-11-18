@@ -24,8 +24,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 481700}
   - 212: {fileID: 21259618}
+  - 61: {fileID: 6163454}
   - 50: {fileID: 5005078}
-  - 61: {fileID: 6125032}
   - 114: {fileID: 11438772}
   - 232: {fileID: 23212812}
   - 114: {fileID: 11421218}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .254000008, y: -.343899995, z: 0}
+  m_LocalPosition: {x: .277999997, y: -.343899995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 481700}
@@ -159,9 +159,9 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &6125032
+--- !u!61 &6163454
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -171,9 +171,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.00395804644, y: -.00520318747}
+  m_Offset: {x: 0, y: -.00229457999}
   serializedVersion: 2
-  m_Size: {x: .611584127, y: .599162161}
+  m_Size: {x: .594108462, y: .589519143}
 --- !u!114 &11421218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,6 +261,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Distance
       value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

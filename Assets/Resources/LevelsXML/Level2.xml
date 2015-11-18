@@ -7,9 +7,19 @@
     <Item prefab="WallLeft" x="-4.74000025" y="0.172623336" rotZ="0" scaleX="0.15831776" scaleY="3.78297925" />
     <Item prefab="WallRight" x="4.72999954" y="0.142623335" rotZ="0" scaleX="0.15831776" scaleY="3.78297925" />
     <Item prefab="BackGroundLevel1" x="-0.01" y="3.89" rotZ="0" scaleX="1.05533648" scaleY="2.37646079" />
-    <Item prefab="normalPlatform" x="1.89" y="-2.5" rotZ="0" scaleX="1" scaleY="0.8" />
-    <Item prefab="normalPlatform" x="-1.97" y="-3.5" rotZ="0" scaleX="1" scaleY="0.8" />
-    <Item prefab="breakPoint" x="0.02" y="-0.52" rotZ="0" scaleX="4.480984" scaleY="0.2250007" />
-    <Item prefab="Bush" x="-4.282" y="-0.17" rotZ="0" scaleX="1.966522" scaleY="1.966522" />
+    <Item prefab="normalPlatform" x="-1.8" y="-3.5" rotZ="0" scaleX="1" scaleY="0.8" />
+    <Item prefab="breakPoint" x="0.02" y="11.6" rotZ="0" scaleX="4.480984" scaleY="0.2250007" />
+    <Item prefab="Bush" x="-4.282" y="11.9" rotZ="0" scaleX="1.966522" scaleY="1.966522" />
+    <Item prefab="traversablePlatform" x="-1.64" y="-2.12" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="breakPoint" x="0.02" y="-4.05" rotZ="0" scaleX="4.480984" scaleY="0.2250007" />
+    <Item prefab="traversablePlatform" x="-1.64" y="-0.76" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="0.55" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="1.83" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="3.08" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="4.31" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="5.56" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="6.68" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="7.97" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="traversablePlatform" x="-1.64" y="9.2" rotZ="0" scaleX="1" scaleY="0.4" />
   </Prefabs>
 </Level>

@@ -70,12 +70,12 @@ public class playerController : MonoBehaviour {
         m_isGround = Physics2D.Linecast(transform.position, groundCheckedLeft.transform.position, 1 << LayerMask.NameToLayer("Ground"))
             || Physics2D.Linecast(transform.position, groundCheckedRight.transform.position, 1 << LayerMask.NameToLayer("Ground"));
         //
-        m_isTouchingTop = Physics2D.Linecast(transform.position, topCheckedLeft.transform.position, 1 << LayerMask.NameToLayer("Ground"))
-            || Physics2D.Linecast(transform.position, topCheckedRight.transform.position, 1 << LayerMask.NameToLayer("Ground"));
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, topCheckedLeft.transform.position, 1 << LayerMask.NameToLayer("Ground"));
+        RaycastHit2D hit2 = Physics2D.Linecast(transform.position, topCheckedRight.transform.position, 1 << LayerMask.NameToLayer("Ground"));
         
         //Si tocamos con la cabeza con alguna plataforma, paramos el salto. Si no hago esto, se quedaría pegado arriba, dado que
         //se considera que el salto todavia no se acabo, y por tanto, la gravedad no bajaría al objeto.
-        if (m_isTouchingTop)
+        if ((hit && hit.collider.GetComponent<PlatformEffector2D>() == null) || (hit2 && hit2.collider.GetComponent<PlatformEffector2D>() == null))
         {
             m_isJumping = false;
         }

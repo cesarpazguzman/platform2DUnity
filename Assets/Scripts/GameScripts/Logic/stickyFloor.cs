@@ -4,7 +4,7 @@ using System.Collections;
 public class stickyFloor : MonoBehaviour {
 
     private Vector3 m_EnterScale = Vector3.one;
-
+    
 	// Use this for initialization
 	void Start () {
 	    

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Time TimeLevel="70" />
+  <SpawnPointPlayer x="-1" y="-2" />
+  <Prefabs>
+    <Item prefab="Floor" x="-0.08" y="-4.83737659" rotZ="0" scaleX="4.221674" scaleY="0.144742355" />
+    <Item prefab="WallLeft" x="-4.74000025" y="0.172623336" rotZ="0" scaleX="0.15831776" scaleY="3.78297925" />
+    <Item prefab="WallRight" x="4.72999954" y="0.142623335" rotZ="0" scaleX="0.15831776" scaleY="3.78297925" />
+    <Item prefab="BackGroundLevel1" x="-0.01" y="3.89" rotZ="0" scaleX="1.05533648" scaleY="2.37646079" />
+    <Item prefab="breakPoint" x="0.02" y="-0.52" rotZ="0" scaleX="4.480984" scaleY="0.2250007" />
+    <Item prefab="normalPlatform" x="-1.97" y="-3.5" rotZ="0" scaleX="1" scaleY="0.8" />
+    <Item prefab="traversablePlatform" x="1.12" y="-1.66" rotZ="0" scaleX="1" scaleY="0.4" />
+    <Item prefab="Bush" x="-4.282" y="-0.17" rotZ="0" scaleX="1.966522" scaleY="1.966522" />
+  </Prefabs>
+</Level>

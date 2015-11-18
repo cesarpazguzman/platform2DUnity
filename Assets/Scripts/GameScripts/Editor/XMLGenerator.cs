@@ -23,7 +23,7 @@ public class XMLGenerator : EditorWindow {
         GUILayout.Label("It generates a file XML of the levels selected. It's neccesary a GameObject with tag Level");
         m_level = (GameObject)EditorGUILayout.ObjectField(m_level, typeof(GameObject), true);
 
-        if (GUILayout.Button("Generate a new XML") && !m_level)
+        if (GUILayout.Button("Generate a new XML") && m_level != null)
         {
             Debug.Log("Generating XML, name: "+m_level.name);
             m_generateXML.generateNewXML(m_level);

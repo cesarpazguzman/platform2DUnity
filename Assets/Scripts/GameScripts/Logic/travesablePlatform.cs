@@ -15,7 +15,7 @@ public class travesablePlatform : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update () 
+	void LateUpdate () 
     {
         //Al principio de todo es un trigger...si la posicion del player acaba siendo superior, entonces ya no es trigger, en caso contrario si.
         gameObject.GetSafeComponent<BoxCollider2D>().isTrigger = (m_player.transform.position.y > transform.position.y + m_offset) ? false : true;

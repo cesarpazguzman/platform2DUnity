@@ -27,10 +27,10 @@ public class scoreLevels : MonoBehaviour {
     public void showScore()
     {
         Dictionary<int, int> levelDef = Managers.GetInstance.StorageMgr.dictionaryScore;
-        int maxLevel = -1;
+        int maxLevel = levels.Count;
         foreach (int key in levelDef.Keys)
         {
-            if (maxLevel == -1 && levelDef[key] == 0)
+            if (maxLevel == levels.Count && levelDef[key] == 0)
             {
                 maxLevel = key;
             }

@@ -17,16 +17,73 @@ Loading C:\Users\Asus\Desktop\repos\platform2D\Executable\SuperClimberGoat_Data\
 Platform assembly: C:\Users\Asus\Desktop\repos\platform2D\Executable\SuperClimberGoat_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\Asus\Desktop\repos\platform2D\Executable\SuperClimberGoat_Data\Managed\LitJson.dll into Unity Child Domain
 Platform assembly: C:\Users\Asus\Desktop\repos\platform2D\Executable\SuperClimberGoat_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.046 seconds
+- Completed reload, in  0.047 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Asus\Desktop\repos\platform2D\Executable\SuperClimberGoat_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1588 -> priority: 1 
-  Thread -> id: 10bc -> priority: 1 
+  Thread -> id: 17f8 -> priority: 1 
+  Thread -> id: 1664 -> priority: 1 
 Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+UnloadTime: 1.716102 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 579.
+Total: 0.707309 ms (FindLiveObjects: 0.040625 ms CreateObjectMapping: 0.057303 ms MarkObjects: 0.597407 ms  DeleteObjects: 0.011546 ms)
+
+Platform assembly: C:\Users\Asus\Desktop\repos\platform2D\Executable\SuperClimberGoat_Data\Managed\System.Xml.dll (this message is harmless)
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+UnloadTime: 1.176426 ms
+
+Unloading 85 unused Assets to reduce memory usage. Loaded Objects now: 494.
+Total: 0.650434 ms (FindLiveObjects: 0.056447 ms CreateObjectMapping: 0.051316 ms MarkObjects: 0.517011 ms  DeleteObjects: 0.024802 ms)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+UnloadTime: 0.517867 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 579.
+Total: 0.576880 ms (FindLiveObjects: 0.035066 ms CreateObjectMapping: 0.028223 ms MarkObjects: 0.507176 ms  DeleteObjects: 0.005986 ms)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+UnloadTime: 0.555499 ms
+
+Unloading 85 unused Assets to reduce memory usage. Loaded Objects now: 494.
+Total: 0.636749 ms (FindLiveObjects: 0.055592 ms CreateObjectMapping: 0.048322 ms MarkObjects: 0.497340 ms  DeleteObjects: 0.034638 ms)
 

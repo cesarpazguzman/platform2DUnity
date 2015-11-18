@@ -8,7 +8,7 @@ public class cameraController : MonoBehaviour {
     private float m_posYCameraInitial;
 	// Use this for initialization
 	void Start () {
-        m_posYCameraInitial = -1;
+        m_posYCameraInitial = 1;
 	}
 	
 	//Llamamos con lateUpdate, porque asi garantizamos que la cámara cambia con la nueva posicion del player del frame determinado
